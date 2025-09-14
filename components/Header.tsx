@@ -31,6 +31,7 @@ import { useTheme } from "next-themes";
 
 
 import { HiChevronDown } from "react-icons/hi";
+import { AnimatedThemeToggle } from "./AnimatedThemeToggle";
 
 interface NavLink {
   label: string;
@@ -133,21 +134,7 @@ export const Header = ({
             <button className="p-2 rounded-xl bg-gray-100 hover:bg-gray-300 hover:cursor-pointer">
               <HiBell className="text-gray-700 text-xl" />
             </button>
-            <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-    >
-      <motion.div
-        key={isDark ? "moon" : "sun"}
-        initial={{ rotate: -90, scale: 0 }}
-        animate={{ rotate: 0, scale: 1 }}
-        exit={{ rotate: 90, scale: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-yellow-500 dark:text-white text-xl"
-      >
-        {isDark ? <HiMoon /> : <HiSun />}
-      </motion.div>
-    </button>
+           <AnimatedThemeToggle/>
 
           </div>
 

@@ -239,9 +239,6 @@ export default function Hero() {
       />
     </div>
 
-<div className="bg-white text-gray-800 dark:bg-red-900 dark:text-white p-4">
-  Hello Dark Mode!
-</div>
     </>
    
     
