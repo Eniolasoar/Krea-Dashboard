@@ -79,7 +79,7 @@ const DotNavigation = ({
 }) => {
   return (
     <div className="flex items-center justify-between mt-4 px-4 lg:px-10">
-  {/* Dots in the center-left */}
+
   <div className="flex gap-2 mx-auto">
     {Array.from({ length: totalDots }).map((_, idx) => (
       <span
@@ -92,7 +92,7 @@ const DotNavigation = ({
     ))}
   </div>
 
-  {/* Arrows on the right */}
+
   <div className="flex gap-2">
     <button
       onClick={onPrev}

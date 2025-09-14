@@ -10,7 +10,6 @@ const themes: Array<"light" | "dark" > = ["light", "dark"]
 export function AnimatedThemeToggle() {
   const { theme, setTheme } = useTheme()
 
-  // Map actual theme to our icon
   const getThemeIcon = (theme: string) => {
     switch (theme) {
       case "light":
@@ -21,7 +20,6 @@ export function AnimatedThemeToggle() {
     }
   }
 
-  // Determine next theme in cycle
   const getNextTheme = (current: string) => {
     const currentIndex = themes.indexOf(current as any)
     return themes[(currentIndex + 1) % themes.length]

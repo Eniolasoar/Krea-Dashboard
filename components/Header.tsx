@@ -39,7 +39,6 @@ export const Header = ({
   const { theme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Middle icons
   const middleIcons: { label: string; icon: React.ReactNode }[] = [
     { label: "Home", icon: <HiHome /> },
     { label: "Photos", icon: <HiPhotograph /> },
@@ -62,7 +61,7 @@ export const Header = ({
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         
-        {/* Left: Logo + Username */}
+
         <div className="flex items-center space-x-3">
           <svg
             aria-label="Krea Logo"
@@ -85,7 +84,7 @@ export const Header = ({
           </span>
         </div>
 
-        {/* Middle: Icons (desktop only) */}
+
         <div className="hidden md:flex items-center space-x-2 bg-gray-100 p-2 rounded-2xl">
           {middleIcons.map(({ label, icon }, idx) => (
             <button
@@ -100,9 +99,9 @@ export const Header = ({
           ))}
         </div>
 
-        {/* Right: Gallery & Support + Notification + Theme Toggle */}
+
         <div className="flex items-center space-x-2">
-          {/* Desktop-only Gallery & Support */}
+    
           <div className="hidden md:flex items-center space-x-2">
             {links.map((link) => (
               <Link
@@ -116,13 +115,13 @@ export const Header = ({
             ))}
           </div>
 
-          {/* Notification + Theme Toggle */}
+
           <button className="p-2 rounded-xl bg-gray-100 hover:bg-gray-300">
             <HiBell className="text-gray-700 text-xl" />
           </button>
           <AnimatedThemeToggle />
 
-          {/* Mobile menu button */}
+
           <button
             className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -140,7 +139,7 @@ export const Header = ({
         
       </div>
 
-      {/* Mobile dropdown: middle icons + Gallery/Support */}
+
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div

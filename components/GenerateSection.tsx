@@ -28,7 +28,7 @@ const tools = [
 export default function GenerateSection() {
   return (
     <div className="mt-4 p-4 sm:p-6">
-      {/* Header */}
+
       <div className="flex justify-between items-center mb-4 flex-wrap">
         <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 sm:gap-6">
           Generate
@@ -41,7 +41,7 @@ export default function GenerateSection() {
         </div>
       </div>
 
-      {/* Tools Grid */}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
         {tools.map((t, idx) => (
           <motion.div
