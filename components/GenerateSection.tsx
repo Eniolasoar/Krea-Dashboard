@@ -12,7 +12,6 @@ import {
   HiCubeTransparent,
 } from "react-icons/hi";
 import { HiChevronDown } from "react-icons/hi";
-
 import { FiActivity } from "react-icons/fi";
 
 const tools = [
@@ -28,55 +27,53 @@ const tools = [
 
 export default function GenerateSection() {
   return (
-    <div className="mt-1 p-6">
-    
+    <div className="mt-4 p-4 sm:p-6">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-4 flex-wrap">
+        <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 sm:gap-6">
+          Generate
+        </h2>
+        <div className="flex gap-2 items-center mt-2 sm:mt-0">
+          <HiChevronDown className="w-4 h-4 text-blue-500" />
+          <a href="#" className="text-sm text-blue-500 hover:underline flex items-center gap-1">
+            Show all
+          </a>
+        </div>
+      </div>
 
-<div className="flex justify-between items-center mb-4">
-  <h2 className="text-2xl font-semibold flex items-center gap-6">
-    Generate
-  </h2>
-  <div className='flex gap-1 items-center'>
-  <HiChevronDown className="w-4 h-4 text-blue-500" />
-  <a href="#" className="text-sm text-blue-500 hover:underline flex items-center gap-1">
-    Show all
-    
-  </a>
-  </div>
- 
-</div>
-
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+      {/* Tools Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
         {tools.map((t, idx) => (
           <motion.div
             key={t.title}
-            className="p-2 rounded-xl flex items-center justify-between"
+            className="p-3 sm:p-4 rounded-xl flex flex-row items-start sm:items-center justify-between bg-white  transition"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: idx * 0.1, type: "spring", stiffness: 100, damping: 20 }}
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 w-full sm:w-auto">
               <div
-                className={`p-2 rounded-lg text-white`}
+                className={`p-3 sm:p-2 rounded-lg text-white flex items-center justify-center`}
                 style={{ backgroundColor: t.bgColor || `hsl(${idx * 45}, 70%, 50%)` }}
               >
-                <span className="text-[20px]">{t.icon}</span>
+                <span className="text-2xl sm:text-xl">{t.icon}</span>
               </div>
-
-              <div>
-                <h3 className="font-semibold flex items-center gap-2 text-sm">
+              <div className="mt-2 sm:mt-0">
+                <h3 className="font-semibold flex items-center gap-2 text-sm dark:text-black">
                   {t.title}
                   {t.badge && (
-                    <span className="ml-1 bg-blue-500 text-white px-1 py-0.5 text-xs rounded-full">
+                    <span className="ml-1 bg-blue-500 text-white px-1 py-0.5 text-[10px] sm:text-xs rounded-full">
                       {t.badge}
                     </span>
                   )}
                 </h3>
-                <p className="mt-[1px] text-xs text-gray-500">{t.desc}</p>
+                <p className="mt-1 text-[10px] sm:text-xs text-gray-500">{t.desc}</p>
               </div>
             </div>
 
-            <span className="bg-gray-100 text-gray-700 text-[12px] px-3 py-1 rounded-xl hover:cursor-pointer hover:bg-gray-200">Open</span>
+            <span className="mt-2 sm:mt-0 bg-gray-100 text-gray-700 text-[10px] sm:text-[12px] px-3 py-1 rounded-xl hover:cursor-pointer hover:bg-gray-200 sm:self-start">
+              Open
+            </span>
           </motion.div>
         ))}
       </div>
