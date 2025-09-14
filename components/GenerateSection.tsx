@@ -54,7 +54,7 @@ export default function GenerateSection() {
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <div
                 className={`p-3 sm:p-2 rounded-lg text-white flex items-center justify-center`}
-                style={{ backgroundColor: t.bgColor || `hsl(${idx * 45}, 70%, 50%)` }}
+                style={{ backgroundColor:`hsl(${idx * 45}, 70%, 50%)` }}
               >
                 <span className="text-2xl sm:text-xl">{t.icon}</span>
               </div>
