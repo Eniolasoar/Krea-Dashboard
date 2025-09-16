@@ -3,7 +3,10 @@ import "./globals.css";
 import { ThemeProvider } from "./ThemeProvider";
 
 
-
+export const metadata: Metadata = {
+  title: "Krea Dashboard | Home",
+  description: "Created by Eniola Anishe",
+};
 
 export default function RootLayout({
   children,
